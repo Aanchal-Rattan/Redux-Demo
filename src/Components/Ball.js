@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import { buyBall } from '../redux/ballActions'
 
 function Ball({ balls, buyBall, sellBall }) {
     // const [bat,setBat] = useState(20)
@@ -29,7 +30,7 @@ const mapStateToProps = (state) => {
 //changes the state 
 const mapDispatchToProps = (dispatch) => {
     return {
-        buyBall: (qty) => dispatch({ type: "BUY_BALL" , payload:qty}),  //action 
+        buyBall: (qty) => dispatch(buyBall(qty)),  //action 
         sellBall: () => dispatch({ type: "SELL_BALL" })
         //dispatch sends the object to the reducer
     }
